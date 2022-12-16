@@ -11,11 +11,10 @@ import study.meta.Column;
 import study.meta.ResultInfo;
 
 public enum Dbms {
-	// dbsm jdbc url 복원 필요
-	// LAB_POSTGRESQL("LabPostgreSQL", ""),
-	// LAB_ORACLE("LabOracle", "");
+	 LAB_POSTGRESQL("LabPostgreSQL", "비공개"),
+	 LAB_ORACLE("LabOracle", "비공개");
 
-	LOCAL_POSTGRESQL("LocalPostgreSQL", "jdbc:postgresql://127.0.0.1:5432/데이터베이스입력?user=사용자입력&password=비밀번호입력");
+	//LOCAL_POSTGRESQL("LocalPostgreSQL", "jdbc:postgresql://127.0.0.1:5432/데이터베이스입력?user=사용자입력&password=비밀번호입력");
 	
 	private String dbmsName;
 	private String jdbcUrl;
@@ -32,7 +31,8 @@ public enum Dbms {
 		}
 	}
 
-	private Connection getConnection() throws SQLException {
+//	private Connection getConnection() throws SQLException {
+	public Connection getConnection() throws SQLException {
 
 		Connection con = null;
 
@@ -92,7 +92,7 @@ public enum Dbms {
 		ResultInfo resultInfo = this.getResultSetInformation(resultSet);
 		System.out.println(queryString);
 		System.out.println(resultInfo.toString());
-
+		
 		resultSet.close();
 		stmt.close();
 	}
