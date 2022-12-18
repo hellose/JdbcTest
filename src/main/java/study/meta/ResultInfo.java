@@ -6,20 +6,22 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.Getter;
 import lombok.Setter;
 
 @Setter
+@Getter
 public class ResultInfo {
 
-	private String queryString = "no query string";
+	private String resultSetInfoString = "no query string";
 	private int columnSize = 0;
 	private List<Column> columns = new ArrayList<>();
 
-	public ResultInfo(String queryString, ResultSet resultSet) throws SQLException {
+	public ResultInfo(String resultSetInfoString, ResultSet resultSet) throws SQLException {
 		this(resultSet);
 
-		if (queryString != null) {
-			this.queryString = queryString;
+		if (resultSetInfoString != null) {
+			this.resultSetInfoString = resultSetInfoString;
 		}
 	}
 
@@ -53,7 +55,7 @@ public class ResultInfo {
 		sb.append(this.columnSize);
 		sb.append(")\n");
 
-		sb.append(queryString);
+		sb.append(resultSetInfoString);
 		sb.append("\n");
 
 		for (Column col : columns) {
