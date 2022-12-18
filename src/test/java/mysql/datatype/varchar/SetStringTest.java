@@ -8,7 +8,7 @@ import java.sql.Types;
 import study.connection.Dbms;
 
 //CREATE TABLE nullable_varchar(vc VARCHAR(5));
-public class setStringTest {
+public class SetStringTest {
 
 	public static void main(String[] args) throws SQLException {
 		Dbms mysql = Dbms.LOCAL_MYSQL;

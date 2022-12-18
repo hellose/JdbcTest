@@ -13,7 +13,7 @@ public class OracleTimestampPrecisionTest {
 	public static void main(String[] args) throws Exception {
 		Dbms labOracle = Dbms.LAB_ORACLE;
 
-		Connection con = labOracle.getConnection();
+		Connection con = labOracle.getTestConnection();
 
 		// NLS_TIMESTAMP_FORMAT 확인
 		String checkParam = "select value from V$NLS_PARAMETERS where parameter = 'NLS_TIMESTAMP_FORMAT'";

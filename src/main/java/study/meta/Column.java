@@ -1,10 +1,10 @@
 package study.meta;
 
-import lombok.Setter;
+import lombok.AllArgsConstructor;
 import lombok.ToString;
 
 @ToString
-@Setter
+@AllArgsConstructor
 public class Column {
 
 	private String name;
